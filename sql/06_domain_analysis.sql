@@ -2,9 +2,10 @@ SELECT
     domain,
     COUNT(*) AS attack_count
 FROM
-    `ransomware_intel.attacks`
+    `ransomware_intel.cleaned_attacks`
 WHERE
     domain IS NOT NULL
+    AND domain != ''
 GROUP BY
     domain
 ORDER BY
